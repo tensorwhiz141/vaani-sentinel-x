@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: vaani-sentinel-x-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd web-ui/nextjs-voice-panel && npm install
+    startCommand: cd web-ui/nextjs-voice-panel && npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SECRET_KEY
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://your-frontend-domain.onrender.com
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 100
+      - key: MAX_FILE_SIZE
+        value: 10mb
+      - key: LOG_LEVEL
+        value: info

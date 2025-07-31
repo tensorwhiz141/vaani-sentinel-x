@@ -1,0 +1,17 @@
+{
+  "post_id": "21c3e36f-e29c-4191-9b10-0793b52da586",
+  "content_id": "2",
+  "platform": "linkedin",
+  "language": "en",
+  "sentiment": "devotional",
+  "voice_tag": "",
+  "preferred_languages": [],
+  "publish_time": "2025-07-30T15:39:56.462483",
+  "status": "success",
+  "content": {
+    "title": "Multilingual Insight 2",
+    "summary": "Exciting news about tech!"
+  },
+  "audio": "",
+  "format": "multilingual title + summary + TTS"
+}

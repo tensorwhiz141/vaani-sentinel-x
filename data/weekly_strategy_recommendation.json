@@ -1,0 +1,439 @@
+{
+  "report_metadata": {
+    "generated_at": "2025-07-30T15:31:53.928233",
+    "report_period": "2025-07-23 to 2025-07-30",
+    "analysis_scope": {
+      "platforms_analyzed": 4,
+      "languages_analyzed": 1,
+      "performance_groups": 4,
+      "voice_combinations": 26
+    }
+  },
+  "executive_summary": {
+    "overall_engagement_average": 459.45,
+    "total_recommendations": 7,
+    "high_priority_actions": 4,
+    "medium_priority_actions": 3,
+    "low_priority_actions": 0,
+    "key_insights": [
+      "Top performing platform-language combination shows 780.0 average engagement",
+      "Voice optimization opportunities identified for 26 language-tone combinations",
+      "4 content amplification opportunities identified"
+    ]
+  },
+  "strategic_recommendations": [
+    {
+      "type": "content_amplification",
+      "priority": "high",
+      "platform": "instagram",
+      "language": "hi",
+      "sentiment": "devotional",
+      "recommendation": "Increase devotional content in hi on instagram",
+      "reason": "Average engagement: 780.0, Top engagement: 917.4",
+      "expected_impact": "high",
+      "implementation_effort": "medium"
+    },
+    {
+      "type": "content_amplification",
+      "priority": "high",
+      "platform": "linkedin",
+      "language": "hi",
+      "sentiment": "devotional",
+      "recommendation": "Increase devotional content in hi on linkedin",
+      "reason": "Average engagement: 464.13, Top engagement: 585.7",
+      "expected_impact": "high",
+      "implementation_effort": "medium"
+    },
+    {
+      "type": "content_amplification",
+      "priority": "high",
+      "platform": "sanatan",
+      "language": "hi",
+      "sentiment": "devotional",
+      "recommendation": "Increase devotional content in hi on sanatan",
+      "reason": "Average engagement: 383.1, Top engagement: 447.6",
+      "expected_impact": "high",
+      "implementation_effort": "medium"
+    },
+    {
+      "type": "content_amplification",
+      "priority": "high",
+      "platform": "twitter",
+      "language": "hi",
+      "sentiment": "devotional",
+      "recommendation": "Increase devotional content in hi on twitter",
+      "reason": "Average engagement: 210.57, Top engagement: 274.0",
+      "expected_impact": "high",
+      "implementation_effort": "medium"
+    },
+    {
+      "type": "voice_optimization",
+      "priority": "medium",
+      "language": "hi",
+      "tone": "devotional",
+      "recommended_voice": "hindi_female_devotional_1",
+      "recommendation": "Use hindi_female_devotional_1 for devotional content in hi",
+      "reason": "Effectiveness score: 0.972",
+      "expected_impact": "medium",
+      "implementation_effort": "low"
+    },
+    {
+      "type": "voice_optimization",
+      "priority": "medium",
+      "language": "en",
+      "tone": "formal",
+      "recommended_voice": "english_male_formal_1",
+      "recommendation": "Use english_male_formal_1 for formal content in en",
+      "reason": "Effectiveness score: 0.96",
+      "expected_impact": "medium",
+      "implementation_effort": "low"
+    },
+    {
+      "type": "voice_optimization",
+      "priority": "medium",
+      "language": "en",
+      "tone": "casual",
+      "recommended_voice": "english_female_casual_1",
+      "recommendation": "Use english_female_casual_1 for casual content in en",
+      "reason": "Effectiveness score: 0.954",
+      "expected_impact": "medium",
+      "implementation_effort": "low"
+    }
+  ],
+  "performance_insights": {
+    "instagram_hi_devotional": {
+      "platform": "instagram",
+      "language": "hi",
+      "sentiment": "devotional",
+      "post_count": 3,
+      "average_engagement": 780.0,
+      "top_engagement": 917.4,
+      "top_content_id": "6",
+      "improvement_potential": 137.4
+    },
+    "linkedin_hi_devotional": {
+      "platform": "linkedin",
+      "language": "hi",
+      "sentiment": "devotional",
+      "post_count": 3,
+      "average_engagement": 464.13,
+      "top_engagement": 585.7,
+      "top_content_id": "6",
+      "improvement_potential": 121.57
+    },
+    "sanatan_hi_devotional": {
+      "platform": "sanatan",
+      "language": "hi",
+      "sentiment": "devotional",
+      "post_count": 3,
+      "average_engagement": 383.1,
+      "top_engagement": 447.6,
+      "top_content_id": "7",
+      "improvement_potential": 64.5
+    },
+    "twitter_hi_devotional": {
+      "platform": "twitter",
+      "language": "hi",
+      "sentiment": "devotional",
+      "post_count": 3,
+      "average_engagement": 210.57,
+      "top_engagement": 274.0,
+      "top_content_id": "8",
+      "improvement_potential": 63.43
+    }
+  },
+  "voice_optimization_data": {
+    "en_casual": {
+      "language": "en",
+      "tone": "casual",
+      "recommended_voice": "english_female_casual_1",
+      "effectiveness_score": 0.954,
+      "average_effectiveness": 0.937,
+      "voice_count": 11
+    },
+    "hi_casual": {
+      "language": "hi",
+      "tone": "casual",
+      "recommended_voice": "hindi_male_casual_1",
+      "effectiveness_score": 0.936,
+      "average_effectiveness": 0.917,
+      "voice_count": 5
+    },
+    "mr_casual": {
+      "language": "mr",
+      "tone": "casual",
+      "recommended_voice": "marathi_female_1",
+      "effectiveness_score": 0.908,
+      "average_effectiveness": 0.9,
+      "voice_count": 5
+    },
+    "ta_devotional": {
+      "language": "ta",
+      "tone": "devotional",
+      "recommended_voice": "tamil_female_devotional_1",
+      "effectiveness_score": 0.938,
+      "average_effectiveness": 0.932,
+      "voice_count": 7
+    },
+    "te_devotional": {
+      "language": "te",
+      "tone": "devotional",
+      "recommended_voice": "telugu_male_devotional_1",
+      "effectiveness_score": 0.93,
+      "average_effectiveness": 0.924,
+      "voice_count": 7
+    },
+    "kn_devotional": {
+      "language": "kn",
+      "tone": "devotional",
+      "recommended_voice": "kannada_female_devotional_1",
+      "effectiveness_score": 0.922,
+      "average_effectiveness": 0.916,
+      "voice_count": 7
+    },
+    "ml_formal": {
+      "language": "ml",
+      "tone": "formal",
+      "recommended_voice": "malayalam_male_1",
+      "effectiveness_score": 0.88,
+      "average_effectiveness": 0.872,
+      "voice_count": 5
+    },
+    "bn_formal": {
+      "language": "bn",
+      "tone": "formal",
+      "recommended_voice": "bengali_female_1",
+      "effectiveness_score": 0.916,
+      "average_effectiveness": 0.908,
+      "voice_count": 5
+    },
+    "gu_formal": {
+      "language": "gu",
+      "tone": "formal",
+      "recommended_voice": "gujarati_male_1",
+      "effectiveness_score": 0.9,
+      "average_effectiveness": 0.892,
+      "voice_count": 5
+    },
+    "hi_devotional": {
+      "language": "hi",
+      "tone": "devotional",
+      "recommended_voice": "hindi_female_devotional_1",
+      "effectiveness_score": 0.972,
+      "average_effectiveness": 0.962,
+      "voice_count": 7
+    },
+    "pa_devotional": {
+      "language": "pa",
+      "tone": "devotional",
+      "recommended_voice": "punjabi_female_devotional_1",
+      "effectiveness_score": 0.932,
+      "average_effectiveness": 0.926,
+      "voice_count": 7
+    },
+    "od_devotional": {
+      "language": "od",
+      "tone": "devotional",
+      "recommended_voice": "odia_female_devotional_1",
+      "effectiveness_score": 0.904,
+      "average_effectiveness": 0.898,
+      "voice_count": 7
+    },
+    "es_casual": {
+      "language": "es",
+      "tone": "casual",
+      "recommended_voice": "spanish_female_casual_1",
+      "effectiveness_score": 0.928,
+      "average_effectiveness": 0.917,
+      "voice_count": 6
+    },
+    "fr_casual": {
+      "language": "fr",
+      "tone": "casual",
+      "recommended_voice": "french_male_casual_1",
+      "effectiveness_score": 0.86,
+      "average_effectiveness": 0.849,
+      "voice_count": 6
+    },
+    "pt_casual": {
+      "language": "pt",
+      "tone": "casual",
+      "recommended_voice": "portuguese_female_casual_1",
+      "effectiveness_score": 0.86,
+      "average_effectiveness": 0.849,
+      "voice_count": 6
+    },
+    "de_formal": {
+      "language": "de",
+      "tone": "formal",
+      "recommended_voice": "german_male_formal_1",
+      "effectiveness_score": 0.942,
+      "average_effectiveness": 0.934,
+      "voice_count": 5
+    },
+    "ru_formal": {
+      "language": "ru",
+      "tone": "formal",
+      "recommended_voice": "russian_male_formal_1",
+      "effectiveness_score": 0.914,
+      "average_effectiveness": 0.906,
+      "voice_count": 5
+    },
+    "it_formal": {
+      "language": "it",
+      "tone": "formal",
+      "recommended_voice": "italian_female_formal_1",
+      "effectiveness_score": 0.948,
+      "average_effectiveness": 0.94,
+      "voice_count": 5
+    },
+    "ja_formal": {
+      "language": "ja",
+      "tone": "formal",
+      "recommended_voice": "japanese_male_formal_1",
+      "effectiveness_score": 0.906,
+      "average_effectiveness": 0.897,
+      "voice_count": 12
+    },
+    "zh_formal": {
+      "language": "zh",
+      "tone": "formal",
+      "recommended_voice": "chinese_female_formal_1",
+      "effectiveness_score": 0.896,
+      "average_effectiveness": 0.887,
+      "voice_count": 12
+    },
+    "ar_formal": {
+      "language": "ar",
+      "tone": "formal",
+      "recommended_voice": "arabic_female_formal_1",
+      "effectiveness_score": 0.88,
+      "average_effectiveness": 0.87,
+      "voice_count": 14
+    },
+    "bn_casual": {
+      "language": "bn",
+      "tone": "casual",
+      "recommended_voice": "bengali_female_1",
+      "effectiveness_score": 0.91,
+      "average_effectiveness": 0.902,
+      "voice_count": 6
+    },
+    "ru_casual": {
+      "language": "ru",
+      "tone": "casual",
+      "recommended_voice": "russian_female_casual_1",
+      "effectiveness_score": 0.848,
+      "average_effectiveness": 0.837,
+      "voice_count": 6
+    },
+    "ko_formal": {
+      "language": "ko",
+      "tone": "formal",
+      "recommended_voice": "korean_male_formal_1",
+      "effectiveness_score": 0.892,
+      "average_effectiveness": 0.884,
+      "voice_count": 5
+    },
+    "en_formal": {
+      "language": "en",
+      "tone": "formal",
+      "recommended_voice": "english_male_formal_1",
+      "effectiveness_score": 0.96,
+      "average_effectiveness": 0.947,
+      "voice_count": 7
+    },
+    "fr_formal": {
+      "language": "fr",
+      "tone": "formal",
+      "recommended_voice": "french_female_formal_1",
+      "effectiveness_score": 0.95,
+      "average_effectiveness": 0.94,
+      "voice_count": 7
+    }
+  },
+  "implementation_timeline": {
+    "immediate_actions": [
+      {
+        "type": "content_amplification",
+        "priority": "high",
+        "platform": "instagram",
+        "language": "hi",
+        "sentiment": "devotional",
+        "recommendation": "Increase devotional content in hi on instagram",
+        "reason": "Average engagement: 780.0, Top engagement: 917.4",
+        "expected_impact": "high",
+        "implementation_effort": "medium"
+      },
+      {
+        "type": "content_amplification",
+        "priority": "high",
+        "platform": "linkedin",
+        "language": "hi",
+        "sentiment": "devotional",
+        "recommendation": "Increase devotional content in hi on linkedin",
+        "reason": "Average engagement: 464.13, Top engagement: 585.7",
+        "expected_impact": "high",
+        "implementation_effort": "medium"
+      },
+      {
+        "type": "content_amplification",
+        "priority": "high",
+        "platform": "sanatan",
+        "language": "hi",
+        "sentiment": "devotional",
+        "recommendation": "Increase devotional content in hi on sanatan",
+        "reason": "Average engagement: 383.1, Top engagement: 447.6",
+        "expected_impact": "high",
+        "implementation_effort": "medium"
+      },
+      {
+        "type": "content_amplification",
+        "priority": "high",
+        "platform": "twitter",
+        "language": "hi",
+        "sentiment": "devotional",
+        "recommendation": "Increase devotional content in hi on twitter",
+        "reason": "Average engagement: 210.57, Top engagement: 274.0",
+        "expected_impact": "high",
+        "implementation_effort": "medium"
+      }
+    ],
+    "short_term_actions": [
+      {
+        "type": "voice_optimization",
+        "priority": "medium",
+        "language": "hi",
+        "tone": "devotional",
+        "recommended_voice": "hindi_female_devotional_1",
+        "recommendation": "Use hindi_female_devotional_1 for devotional content in hi",
+        "reason": "Effectiveness score: 0.972",
+        "expected_impact": "medium",
+        "implementation_effort": "low"
+      },
+      {
+        "type": "voice_optimization",
+        "priority": "medium",
+        "language": "en",
+        "tone": "formal",
+        "recommended_voice": "english_male_formal_1",
+        "recommendation": "Use english_male_formal_1 for formal content in en",
+        "reason": "Effectiveness score: 0.96",
+        "expected_impact": "medium",
+        "implementation_effort": "low"
+      },
+      {
+        "type": "voice_optimization",
+        "priority": "medium",
+        "language": "en",
+        "tone": "casual",
+        "recommended_voice": "english_female_casual_1",
+        "recommendation": "Use english_female_casual_1 for casual content in en",
+        "reason": "Effectiveness score: 0.954",
+        "expected_impact": "medium",
+        "implementation_effort": "low"
+      }
+    ],
+    "long_term_actions": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "content_id": "1",
+  "platform": "instagram",
+  "content_language": "en",
+  "preferred_languages": [
+    "en",
+    "hi",
+    "mr"
+  ],
+  "voice_tag": "english_female_casual_1",
+  "original_text": "The color of the sky appears blue to the human eye under normal atmospheric conditions during the daytime.",
+  "sentiment": "neutral",
+  "tone": "casual",
+  "version": 1,
+  "user_content_types": [
+    "fact",
+    "micro-article"
+  ],
+  "content_type": "fact"
+}

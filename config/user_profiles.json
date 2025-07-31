@@ -1,0 +1,72 @@
+[
+  {
+    "user_id": "user_001",
+    "preferred_languages": ["en", "hi", "mr"],
+    "default_language": "en",
+    "tone_preference": "casual",
+    "content_types": ["fact", "micro-article"]
+  },
+  {
+    "user_id": "user_002",
+    "preferred_languages": ["ta", "te", "kn"],
+    "default_language": "ta",
+    "tone_preference": "devotional",
+    "content_types": ["quote", "fact"]
+  },
+  {
+    "user_id": "user_003",
+    "preferred_languages": ["ml", "bn", "gu"],
+    "default_language": "ml",
+    "tone_preference": "formal",
+    "content_types": ["micro-article", "fact"]
+  },
+  {
+    "user_id": "user_004",
+    "preferred_languages": ["pa", "od", "hi"],
+    "default_language": "pa",
+    "tone_preference": "devotional",
+    "content_types": ["quote", "fact"]
+  },
+  {
+    "user_id": "user_005",
+    "preferred_languages": ["es", "fr", "pt"],
+    "default_language": "es",
+    "tone_preference": "casual",
+    "content_types": ["micro-article", "quote"]
+  },
+  {
+    "user_id": "user_006",
+    "preferred_languages": ["de", "ru", "it"],
+    "default_language": "de",
+    "tone_preference": "formal",
+    "content_types": ["fact", "micro-article"]
+  },
+  {
+    "user_id": "user_007",
+    "preferred_languages": ["ja", "zh", "ar"],
+    "default_language": "ja",
+    "tone_preference": "formal",
+    "content_types": ["fact", "quote"]
+  },
+  {
+    "user_id": "user_008",
+    "preferred_languages": ["en", "ru", "bn"],
+    "default_language": "ru",
+    "tone_preference": "casual",
+    "content_types": ["micro-article", "quote"]
+  },
+  {
+    "user_id": "user_009",
+    "preferred_languages": ["ko", "ja", "zh"],
+    "default_language": "ko",
+    "tone_preference": "formal",
+    "content_types": ["fact", "micro-article"]
+  },
+  {
+    "user_id": "user_010",
+    "preferred_languages": ["ar", "en", "fr"],
+    "default_language": "ar",
+    "tone_preference": "formal",
+    "content_types": ["quote", "fact"]
+  }
+]

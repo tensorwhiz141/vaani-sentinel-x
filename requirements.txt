@@ -1,0 +1,32 @@
+# Vaani Sentinel-X Python Dependencies
+# Core Python packages required for the multilingual AI content generation system
+
+# Web Framework & HTTP
+requests>=2.31.0
+flask>=2.3.0
+
+# AI & NLP Libraries
+groq>=0.4.0
+textblob>=0.17.1
+langdetect>=1.0.9
+
+# Text-to-Speech
+gtts>=2.3.0
+
+# Security & Encryption
+cryptography>=41.0.0
+better_profanity>=0.7.0
+
+# Environment & Configuration
+python-dotenv>=1.0.0
+
+# Authentication & JWT
+PyJWT>=2.8.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Note: The following are built into Python standard library and don't need pip install:
+# sqlite3, datetime, pathlib, uuid, hashlib, shutil, asyncio, typing, logging,
+# json, re, os, sys, subprocess, csv, glob, argparse, time, collections, random, platform
