@@ -85,7 +85,7 @@ app.use('/data', express.static(dataPath));
 // Test user credentials (in production, use a proper database)
 const TEST_USER = {
   email: 'test@vaani.com',
-  password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password123
+  password: 'password123', // password123
   id: 1,
   name: 'Test User'
 };
