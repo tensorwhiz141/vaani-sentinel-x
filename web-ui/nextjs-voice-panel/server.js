@@ -23,7 +23,6 @@ const morgan = require('morgan');
 const compression = require('compression');
 const rateLimit = require('express-rate-limit');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
 const path = require('path');
 const fs = require('fs-extra');
 require('dotenv').config();
@@ -85,7 +84,7 @@ app.use('/data', express.static(dataPath));
 // Test user credentials (in production, use a proper database)
 const TEST_USER = {
   email: 'test@vaani.com',
-  password: 'password123', // password123
+  password: 'password123',
   id: 1,
   name: 'Test User'
 };
@@ -119,7 +118,7 @@ app.get('/health', (req, res) => {
 });
 
 // Authentication endpoints
-app.post('/api/auth/login', async (req, res) => {
+app.post('/api/auth/login', (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -136,7 +135,8 @@ app.post('/api/auth/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    const isValidPassword = await bcrypt.compare(password, TEST_USER.password);
+    // Simple plain text password comparison
+    const isValidPassword = password === TEST_USER.password;
     console.log('Password validation result:', isValidPassword);
 
     if (!isValidPassword) {

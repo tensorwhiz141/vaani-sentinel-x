@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaani Sentinel-X Backend API Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        .header-info {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .base-url {
+            font-family: 'Courier New', monospace;
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .endpoint {
+            font-family: 'Courier New', monospace;
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+        .method-get { background: #d4edda; color: #155724; }
+        .method-post { background: #d1ecf1; color: #0c5460; }
+        .auth-required { color: #28a745; font-weight: bold; }
+        .auth-not-required { color: #dc3545; }
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .json-response {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .status-200 { background: #d4edda; color: #155724; }
+        .status-400 { background: #f8d7da; color: #721c24; }
+        .status-401 { background: #fff3cd; color: #856404; }
+        .status-404 { background: #f8d7da; color: #721c24; }
+        .status-500 { background: #f8d7da; color: #721c24; }
+        .toc {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin: 8px 0;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: 500;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .credentials-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .postman-section {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; }
+            .code-block { background: #f5f5f5; color: #333; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Vaani Sentinel-X Backend API Documentation</h1>
+        
+        <div class="header-info">
+            <h3>Base URL</h3>
+            <div class="base-url">https://vaani-sentinel-x-backend.onrender.com</div>
+            <p><strong>Version:</strong> 1.0.0 | <strong>Status:</strong> ✅ Live | <strong>Last Updated:</strong> July 31, 2025</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Table of Contents</h3>
+            <ul>
+                <li><a href="#overview">1. API Overview</a></li>
+                <li><a href="#authentication">2. Authentication System</a></li>
+                <li><a href="#endpoints">3. API Endpoints</a></li>
+                <li><a href="#postman">4. Postman Collection</a></li>
+                <li><a href="#errors">5. Error Handling</a></li>
+                <li><a href="#security">6. Security & Rate Limiting</a></li>
+                <li><a href="#testing">7. Testing Guide</a></li>
+            </ul>
+        </div>
+
+        <section id="overview">
+            <h2>1. 📊 API Overview</h2>
+            <p>The Vaani Sentinel-X Backend provides a comprehensive REST API for managing multilingual AI-generated content, analytics, and system operations.</p>
+            
+            <h3>Complete Endpoints Summary</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Endpoint</th>
+                        <th>Purpose</th>
+                        <th>Auth</th>
+                        <th>Rate Limited</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/health</span></td>
+                        <td>Server health check</td>
+                        <td><span class="auth-not-required">❌ No</span></td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-post">POST</span></td>
+                        <td><span class="endpoint">/api/auth/login</span></td>
+                        <td>User authentication</td>
+                        <td><span class="auth-not-required">❌ No</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/auth/verify</span></td>
+                        <td>Token verification</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/content/structured</span></td>
+                        <td>Structured content blocks</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/translated-content</span></td>
+                        <td>AI-translated content</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/personalized-content</span></td>
+                        <td>User-personalized content</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/tts-simulation</span></td>
+                        <td>TTS voice assignments</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/strategy-recommendations</span></td>
+                        <td>Weekly strategies</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/analytics/metrics</span></td>
+                        <td>Post engagement metrics</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/analytics/suggestions</span></td>
+                        <td>Strategy suggestions</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/scheduled-posts</span></td>
+                        <td>All scheduled posts</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/content/ready/:language</span></td>
+                        <td>Language-specific content</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/translation-previews</span></td>
+                        <td>Translation previews</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-get">GET</span></td>
+                        <td><span class="endpoint">/api/system/status</span></td>
+                        <td>System diagnostics</td>
+                        <td><span class="auth-required">✅ Required</span></td>
+                        <td>✅ Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="authentication">
+            <h2>2. 🔐 Authentication System</h2>
+            
+            <div class="credentials-box">
+                <h4>🔑 Test Credentials</h4>
+                <p><strong>Email:</strong> test@vaani.com</p>
+                <p><strong>Password:</strong> password123</p>
+                <p><strong>Token Expiry:</strong> 24 hours</p>
+            </div>
+
+            <h3>Authentication Flow</h3>
+            <p><strong>Step 1:</strong> Login to get JWT token</p>
+            <div class="code-block">
+POST /api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@vaani.com",
+  "password": "password123"
+}
+            </div>
+
+            <p><strong>Response:</strong></p>
+            <div class="json-response">
+{
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "id": 1,
+    "email": "test@vaani.com",
+    "name": "Test User"
+  }
+}
+            </div>
+
+            <p><strong>Step 2:</strong> Use token in subsequent requests</p>
+            <div class="code-block">
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+            </div>
+        </section>
+
+        <section id="endpoints">
+            <h2>3. 📖 API Endpoints</h2>
+
+            <h3>🏥 Health Check</h3>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/health
+            </div>
+            <p><strong>Purpose:</strong> Server health and status check</p>
+            <p><strong>Authentication:</strong> None required</p>
+            <p><strong>Response:</strong></p>
+            <div class="json-response">
+{
+  "status": "OK",
+  "timestamp": "2025-07-31T09:28:01.007Z",
+  "service": "Vaani Sentinel-X Backend",
+  "version": "1.0.0"
+}
+            </div>
+
+            <h3>🔐 Authentication Endpoints</h3>
+
+            <h4>Login</h4>
+            <div class="code-block">
+POST https://vaani-sentinel-x-backend.onrender.com/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@vaani.com",
+  "password": "password123"
+}
+            </div>
+            <p><strong>Status Codes:</strong>
+                <span class="status-badge status-200">200 OK</span>
+                <span class="status-badge status-400">400 Bad Request</span>
+                <span class="status-badge status-401">401 Unauthorized</span>
+                <span class="status-badge status-500">500 Server Error</span>
+            </p>
+
+            <h4>Verify Token</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/auth/verify
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Response:</strong></p>
+            <div class="json-response">
+{
+  "valid": true,
+  "user": {
+    "id": 1,
+    "email": "test@vaani.com",
+    "name": "Test User"
+  }
+}
+            </div>
+
+            <h3>📄 Content Management Endpoints</h3>
+
+            <h4>Structured Content</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/content/structured
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Purpose:</strong> Get structured content blocks</p>
+            <p><strong>Data Source:</strong> /content/structured/content_blocks.json</p>
+
+            <h4>Content Ready by Language</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/content/ready/en
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Parameters:</strong> :language (en, hi, sa, etc.)</p>
+            <p><strong>Purpose:</strong> Get content ready for specific language</p>
+
+            <h3>🌐 Multilingual Data Endpoints</h3>
+
+            <h4>Translated Content</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/translated-content
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Purpose:</strong> Get AI-translated content with confidence scores</p>
+            <p><strong>Sample Response:</strong></p>
+            <div class="json-response">
+{
+  "translations": [
+    {
+      "content_id": "1",
+      "original_language": "en",
+      "translations": {
+        "hi": {
+          "text": "आकाश का रंग नीला दिखाई देता है...",
+          "confidence_score": 0.95,
+          "translator": "groq_llama"
+        }
+      }
+    }
+  ]
+}
+            </div>
+
+            <h4>Personalized Content</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/personalized-content
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Purpose:</strong> Get user-personalized content</p>
+
+            <h4>TTS Simulation</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/tts-simulation
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Purpose:</strong> Get TTS voice assignments and quality metrics</p>
+
+            <h4>Strategy Recommendations</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/strategy-recommendations
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Purpose:</strong> Get weekly performance-based strategies</p>
+
+            <h3>📊 Analytics Endpoints</h3>
+
+            <h4>Analytics Metrics</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/analytics/metrics
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Purpose:</strong> Get post engagement metrics</p>
+
+            <h4>Analytics Suggestions</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/analytics/suggestions
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Purpose:</strong> Get strategy suggestions</p>
+
+            <h3>📅 Scheduling Endpoints</h3>
+
+            <h4>Scheduled Posts</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/scheduled-posts
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Purpose:</strong> Get all scheduled posts</p>
+
+            <h4>Translation Previews</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/translation-previews
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Purpose:</strong> Get translation previews</p>
+
+            <h3>🖥️ System Endpoints</h3>
+
+            <h4>System Status</h4>
+            <div class="code-block">
+GET https://vaani-sentinel-x-backend.onrender.com/api/system/status
+Authorization: Bearer TOKEN
+            </div>
+            <p><strong>Purpose:</strong> Get system status and diagnostics</p>
+            <p><strong>Sample Response:</strong></p>
+            <div class="json-response">
+{
+  "timestamp": "2025-07-31T09:28:01.007Z",
+  "service": "Vaani Sentinel-X Backend",
+  "version": "1.0.0",
+  "uptime": 3600.5,
+  "memory": {
+    "rss": 45678592,
+    "heapTotal": 20971520,
+    "heapUsed": 15728640
+  },
+  "directories": {
+    "content": true,
+    "scheduledPosts": true,
+    "analytics": true,
+    "data": true
+  }
+}
+            </div>
+        </section>
+
+        <section id="postman">
+            <h2>4. 🚀 Postman Collection</h2>
+
+            <div class="postman-section">
+                <h3>Collection Setup</h3>
+                <p><strong>Collection Name:</strong> Vaani Sentinel-X API</p>
+                <p><strong>Base URL Variable:</strong> {{baseUrl}} = https://vaani-sentinel-x-backend.onrender.com</p>
+                <p><strong>Token Variable:</strong> {{token}} = (auto-saved after login)</p>
+            </div>
+
+            <h3>Essential Postman Requests</h3>
+
+            <h4>1. Health Check</h4>
+            <div class="code-block">
+Method: GET
+URL: {{baseUrl}}/health
+Headers: None
+Body: None
+            </div>
+
+            <h4>2. Login (Auto-save Token)</h4>
+            <div class="code-block">
+Method: POST
+URL: {{baseUrl}}/api/auth/login
+Headers: Content-Type: application/json
+Body: {
+  "email": "test@vaani.com",
+  "password": "password123"
+}
+
+Test Script:
+pm.test("Login successful", function () {
+    pm.response.to.have.status(200);
+    const response = pm.response.json();
+    pm.collectionVariables.set("token", response.token);
+});
+            </div>
+
+            <h4>3. Get Translated Content</h4>
+            <div class="code-block">
+Method: GET
+URL: {{baseUrl}}/api/translated-content
+Headers: Authorization: Bearer {{token}}
+Body: None
+            </div>
+
+            <h4>4. Get System Status</h4>
+            <div class="code-block">
+Method: GET
+URL: {{baseUrl}}/api/system/status
+Headers: Authorization: Bearer {{token}}
+Body: None
+            </div>
+
+            <h3>Complete Request List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Request Name</th>
+                        <th>Method</th>
+                        <th>Endpoint</th>
+                        <th>Auth Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Health Check</td><td>GET</td><td>/health</td><td>❌</td></tr>
+                    <tr><td>Login</td><td>POST</td><td>/api/auth/login</td><td>❌</td></tr>
+                    <tr><td>Verify Token</td><td>GET</td><td>/api/auth/verify</td><td>✅</td></tr>
+                    <tr><td>Structured Content</td><td>GET</td><td>/api/content/structured</td><td>✅</td></tr>
+                    <tr><td>Translated Content</td><td>GET</td><td>/api/translated-content</td><td>✅</td></tr>
+                    <tr><td>Personalized Content</td><td>GET</td><td>/api/personalized-content</td><td>✅</td></tr>
+                    <tr><td>TTS Simulation</td><td>GET</td><td>/api/tts-simulation</td><td>✅</td></tr>
+                    <tr><td>Strategy Recommendations</td><td>GET</td><td>/api/strategy-recommendations</td><td>✅</td></tr>
+                    <tr><td>Analytics Metrics</td><td>GET</td><td>/api/analytics/metrics</td><td>✅</td></tr>
+                    <tr><td>Analytics Suggestions</td><td>GET</td><td>/api/analytics/suggestions</td><td>✅</td></tr>
+                    <tr><td>Scheduled Posts</td><td>GET</td><td>/api/scheduled-posts</td><td>✅</td></tr>
+                    <tr><td>Content Ready (EN)</td><td>GET</td><td>/api/content/ready/en</td><td>✅</td></tr>
+                    <tr><td>Translation Previews</td><td>GET</td><td>/api/translation-previews</td><td>✅</td></tr>
+                    <tr><td>System Status</td><td>GET</td><td>/api/system/status</td><td>✅</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="errors">
+            <h2>5. ❌ Error Handling</h2>
+
+            <h3>HTTP Status Codes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status Code</th>
+                        <th>Meaning</th>
+                        <th>When It Occurs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="status-badge status-200">200</span></td>
+                        <td>OK</td>
+                        <td>Successful request</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge status-400">400</span></td>
+                        <td>Bad Request</td>
+                        <td>Missing required fields, invalid JSON</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge status-401">401</span></td>
+                        <td>Unauthorized</td>
+                        <td>Missing or invalid authentication</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge status-404">404</span></td>
+                        <td>Not Found</td>
+                        <td>Resource not found, invalid endpoint</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-badge status-500">500</span></td>
+                        <td>Internal Server Error</td>
+                        <td>Server-side error</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Error Response Format</h3>
+            <div class="json-response">
+{
+  "error": "Error message",
+  "message": "Detailed description",
+  "timestamp": "2025-07-31T09:28:01.007Z"
+}
+            </div>
+
+            <h3>Common Error Examples</h3>
+            <div class="json-response">
+// Missing token
+{
+  "error": "Access token required"
+}
+
+// Invalid credentials
+{
+  "error": "Invalid credentials"
+}
+
+// Resource not found
+{
+  "error": "Translated content not found"
+}
+
+// Rate limit exceeded
+{
+  "error": "Too many requests from this IP, please try again later."
+}
+            </div>
+        </section>
+
+        <section id="security">
+            <h2>6. 🔒 Security & Rate Limiting</h2>
+
+            <h3>Rate Limiting</h3>
+            <ul>
+                <li><strong>Scope:</strong> All /api/* endpoints</li>
+                <li><strong>Limit:</strong> 100 requests per 15 minutes per IP</li>
+                <li><strong>Window:</strong> Rolling 15-minute window</li>
+                <li><strong>Response:</strong> 429 status code when exceeded</li>
+            </ul>
+
+            <h3>Security Features</h3>
+            <ul>
+                <li>JWT-based authentication with 24-hour expiry</li>
+                <li>Security headers (Helmet.js)</li>
+                <li>CORS protection</li>
+                <li>Request size limits (10MB)</li>
+                <li>Input validation and sanitization</li>
+            </ul>
+
+            <h3>CORS Configuration</h3>
+            <div class="json-response">
+{
+  "origin": ["http://localhost:3000", "http://localhost:3001"],
+  "credentials": true,
+  "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  "allowedHeaders": ["Content-Type", "Authorization"]
+}
+            </div>
+        </section>
+
+        <section id="testing">
+            <h2>7. 🧪 Testing Guide</h2>
+
+            <h3>Quick Test Sequence</h3>
+            <ol>
+                <li><strong>Health Check:</strong> Verify server is running</li>
+                <li><strong>Login:</strong> Get JWT token (save it!)</li>
+                <li><strong>Verify Token:</strong> Confirm authentication works</li>
+                <li><strong>Test Content Endpoint:</strong> Verify data access</li>
+            </ol>
+
+            <h3>cURL Examples</h3>
+            <div class="code-block">
+# Health check
+curl https://vaani-sentinel-x-backend.onrender.com/health
+
+# Login
+curl -X POST https://vaani-sentinel-x-backend.onrender.com/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@vaani.com","password":"password123"}'
+
+# Protected endpoint (replace TOKEN)
+curl -H "Authorization: Bearer TOKEN" \
+  https://vaani-sentinel-x-backend.onrender.com/api/system/status
+            </div>
+
+            <h3>Performance Expectations</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Endpoint Type</th>
+                        <th>Expected Response Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Health check</td><td>&lt; 100ms</td></tr>
+                    <tr><td>Authentication</td><td>&lt; 500ms</td></tr>
+                    <tr><td>Data endpoints</td><td>&lt; 1000ms</td></tr>
+                    <tr><td>Static files</td><td>&lt; 200ms</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Static File Access</h3>
+            <p>Direct file access (no authentication required):</p>
+            <div class="code-block">
+# Content files
+https://vaani-sentinel-x-backend.onrender.com/content/structured/content_blocks.json
+
+# Data files
+https://vaani-sentinel-x-backend.onrender.com/data/translated_content.json
+
+# Analytics files
+https://vaani-sentinel-x-backend.onrender.com/analytics/post_metrics.json
+            </div>
+        </section>
+
+        <section>
+            <h2>🎯 Summary</h2>
+            <div class="header-info">
+                <h3>Vaani Sentinel-X Backend Features</h3>
+                <p>✅ <strong>14 API endpoints</strong> for comprehensive content management</p>
+                <p>✅ <strong>JWT-based authentication</strong> with 24-hour token expiry</p>
+                <p>✅ <strong>Rate limiting</strong> (100 requests/15 minutes)</p>
+                <p>✅ <strong>Security headers</strong> and CORS protection</p>
+                <p>✅ <strong>Static file serving</strong> for direct content access</p>
+                <p>✅ <strong>Comprehensive error handling</strong> with standard HTTP codes</p>
+                <p>✅ <strong>System monitoring</strong> and health checks</p>
+
+                <div style="margin-top: 20px;">
+                    <p><strong>Base URL:</strong> https://vaani-sentinel-x-backend.onrender.com</p>
+                    <p><strong>Test Credentials:</strong> test@vaani.com / password123</p>
+                    <p><strong>Token Expiry:</strong> 24 hours</p>
+                    <p><strong>Status:</strong> 🚀 Production Ready</p>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666;">
+            <p><strong>Vaani Sentinel-X Backend API Documentation</strong></p>
+            <p>Generated on July 31, 2025 | Version 1.0.0</p>
+            <p>🚀 Deployed on Render.com | 📧 Contact: tensorwhiz141@github.com</p>
+        </footer>
+    </div>
+</body>
+</html>
