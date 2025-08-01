@@ -9,8 +9,8 @@ import time
 import asyncio
 from langdetect import detect, LangDetectException
 
-from ..models.request_models import MultilingualProcessingRequest, LanguageCode
-from ..models.response_models import MultilingualProcessingResponse, LanguageDetectionResult
+from models.request_models import MultilingualProcessingRequest, LanguageCode
+from models.response_models import MultilingualProcessingResponse, LanguageDetectionResult
 
 router = APIRouter()
 logger = logging.getLogger(__name__)

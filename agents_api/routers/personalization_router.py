@@ -12,14 +12,14 @@ from datetime import datetime
 import asyncio
 
 # Import models
-from ..models.request_models import (
+from models.request_models import (
     PersonalizationRequest,
     UserPreferences,
     LanguageCode,
     ToneType,
     PlatformType
 )
-from ..models.response_models import (
+from models.response_models import (
     PersonalizationResponse,
     PersonalizationResult,
     ErrorResponse

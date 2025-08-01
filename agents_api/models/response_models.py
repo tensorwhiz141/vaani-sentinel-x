@@ -130,10 +130,10 @@ class SchedulingResponse(BaseResponse):
 # Strategy Response Models
 class StrategyRecommendation(BaseModel):
     recommendation_type: str = Field(..., description="Type of recommendation")
-    priority: str = Field(..., regex="^(high|medium|low)$", description="Recommendation priority")
+    priority: str = Field(..., pattern="^(high|medium|low)$", description="Recommendation priority")
     description: str = Field(..., description="Detailed recommendation")
     expected_impact: float = Field(..., ge=0.0, le=1.0, description="Expected impact score")
-    implementation_difficulty: str = Field(..., regex="^(easy|medium|hard)$", description="Implementation difficulty")
+    implementation_difficulty: str = Field(..., pattern="^(easy|medium|hard)$", description="Implementation difficulty")
     timeline: str = Field(..., description="Recommended implementation timeline")
 
 class StrategyResponse(BaseResponse):
@@ -146,7 +146,7 @@ class StrategyResponse(BaseResponse):
 # Security Validation Response Models
 class SecurityIssue(BaseModel):
     issue_type: str = Field(..., description="Type of security issue")
-    severity: str = Field(..., regex="^(low|medium|high|critical)$", description="Issue severity")
+    severity: str = Field(..., pattern="^(low|medium|high|critical)$", description="Issue severity")
     description: str = Field(..., description="Issue description")
     suggested_fix: str = Field(..., description="Suggested resolution")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Detection confidence")
@@ -160,7 +160,7 @@ class SecurityValidationResponse(BaseResponse):
 
 # Sentiment Analysis Response Models
 class SentimentAnalysis(BaseModel):
-    overall_sentiment: str = Field(..., regex="^(positive|negative|neutral)$", description="Overall sentiment")
+    overall_sentiment: str = Field(..., pattern="^(positive|negative|neutral)$", description="Overall sentiment")
     sentiment_score: float = Field(..., ge=-1.0, le=1.0, description="Sentiment score (-1 to 1)")
     emotional_tone: str = Field(..., description="Detected emotional tone")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Analysis confidence")

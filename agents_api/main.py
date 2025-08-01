@@ -21,11 +21,11 @@ from typing import Dict, List, Optional, Any
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 # Import Pydantic models for request/response validation
-from .models.request_models import *
-from .models.response_models import *
+from models.request_models import *
+from models.response_models import *
 
 # Import agent routers
-from .routers import (
+from routers import (
     translation_router,
     content_generation_router,
     personalization_router,
@@ -39,7 +39,7 @@ from .routers import (
 )
 
 # Import WebSocket handler
-from .websocket_handler import websocket_endpoint
+from websocket_handler import websocket_endpoint
 
 # Configure logging
 logging.basicConfig(

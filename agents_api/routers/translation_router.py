@@ -11,13 +11,13 @@ from datetime import datetime
 import asyncio
 
 # Import models
-from ..models.request_models import (
-    TranslationRequest, 
+from models.request_models import (
+    TranslationRequest,
     BatchTranslationRequest,
     LanguageCode,
     ToneType
 )
-from ..models.response_models import (
+from models.response_models import (
     TranslationResponse,
     TranslationResult,
     BatchTranslationResponse,

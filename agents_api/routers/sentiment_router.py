@@ -9,8 +9,8 @@ import time
 import asyncio
 import re
 
-from ..models.request_models import SentimentRequest, LanguageCode
-from ..models.response_models import SentimentResponse, SentimentAnalysis
+from models.request_models import SentimentRequest, LanguageCode
+from models.response_models import SentimentResponse, SentimentAnalysis
 
 router = APIRouter()
 logger = logging.getLogger(__name__)

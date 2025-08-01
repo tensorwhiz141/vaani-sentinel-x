@@ -13,7 +13,7 @@ from datetime import datetime
 import asyncio
 
 # Import models
-from ..models.request_models import (
+from models.request_models import (
     ContentGenerationRequest,
     BulkContentGenerationRequest,
     LanguageCode,
@@ -21,7 +21,7 @@ from ..models.request_models import (
     PlatformType,
     ContentType
 )
-from ..models.response_models import (
+from models.response_models import (
     ContentGenerationResponse,
     GeneratedContent,
     ErrorResponse

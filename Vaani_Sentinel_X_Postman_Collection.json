@@ -1,0 +1,388 @@
+{
+  "info": {
+    "name": "Vaani Sentinel-X Dynamic Agent API",
+    "description": "Complete API collection for all 10 agents in the Vaani Sentinel-X system",
+    "version": "2.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "System Endpoints",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            }
+          }
+        },
+        {
+          "name": "System Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": ["{{baseUrl}}"],
+              "path": [""]
+            }
+          }
+        },
+        {
+          "name": "List All Agents",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/list",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "list"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Translation Agent",
+      "item": [
+        {
+          "name": "Basic Translation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"original_text\": \"Hello, how are you today?\",\n  \"source_language\": \"en\",\n  \"target_languages\": [\"hi\", \"sa\", \"es\"],\n  \"tone\": \"formal\",\n  \"preserve_formatting\": true,\n  \"include_confidence\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/translate",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "translate"]
+            }
+          }
+        },
+        {
+          "name": "Devotional Translation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"original_text\": \"May peace and blessings be with you always\",\n  \"source_language\": \"en\",\n  \"target_languages\": [\"hi\", \"sa\"],\n  \"tone\": \"devotional\",\n  \"preserve_formatting\": true,\n  \"include_confidence\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/translate",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "translate"]
+            }
+          }
+        },
+        {
+          "name": "Get Supported Languages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/translate/languages",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "translate", "languages"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Content Generation Agent",
+      "item": [
+        {
+          "name": "Instagram Content",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"raw_content\": \"Artificial Intelligence is transforming healthcare by enabling early disease detection\",\n  \"content_type\": \"fact\",\n  \"platforms\": [\"instagram\"],\n  \"languages\": [\"en\", \"hi\"],\n  \"tone\": \"casual\",\n  \"target_audience\": \"tech enthusiasts\",\n  \"include_hashtags\": true,\n  \"max_length\": 500\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/generate-content",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "generate-content"]
+            }
+          }
+        },
+        {
+          "name": "Multi-Platform Content",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"raw_content\": \"Meditation brings inner peace and clarity to the mind\",\n  \"content_type\": \"devotional\",\n  \"platforms\": [\"instagram\", \"twitter\", \"linkedin\", \"sanatan\"],\n  \"languages\": [\"en\", \"hi\", \"sa\"],\n  \"tone\": \"devotional\",\n  \"include_hashtags\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/generate-content",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "generate-content"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Personalization Agent",
+      "item": [
+        {
+          "name": "Basic Personalization",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"This is an amazing article about the latest technology trends\",\n  \"user_id\": \"user_123\",\n  \"user_preferences\": {\n    \"tone\": \"casual\",\n    \"language\": \"en\",\n    \"platform\": \"instagram\",\n    \"interests\": [\"technology\", \"innovation\", \"AI\"]\n  },\n  \"personalization_level\": 0.8\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/personalize",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "personalize"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "TTS Agent",
+      "item": [
+        {
+          "name": "English TTS",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Welcome to Vaani Sentinel-X, your multilingual AI content generation system\",\n  \"language\": \"en\",\n  \"voice_preference\": \"female\",\n  \"tone\": \"neutral\",\n  \"speed\": 1.0,\n  \"include_quality_metrics\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/tts-simulate",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "tts-simulate"]
+            }
+          }
+        },
+        {
+          "name": "Hindi TTS",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"नमस्ते! आपका स्वागत है\",\n  \"language\": \"hi\",\n  \"voice_preference\": \"male\",\n  \"tone\": \"formal\",\n  \"speed\": 0.8,\n  \"include_quality_metrics\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/tts-simulate",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "tts-simulate"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Analytics Agent",
+      "item": [
+        {
+          "name": "Content Analysis",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content_id\": \"post_001\",\n  \"content_text\": \"🚀 Exciting news! Our new AI technology is revolutionizing content creation. Join us! #AI #Innovation\",\n  \"platform\": \"instagram\",\n  \"language\": \"en\",\n  \"analysis_depth\": \"detailed\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/analyze-content",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "analyze-content"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Scheduler Agent",
+      "item": [
+        {
+          "name": "Schedule Content",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content_id\": \"ig_post_001\",\n  \"content\": \"🌟 Amazing sunset today! Nature never fails to inspire us. #sunset #nature\",\n  \"platform\": \"instagram\",\n  \"language\": \"en\",\n  \"timezone\": \"UTC\",\n  \"auto_optimize\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/schedule-content",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "schedule-content"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Strategy Agent",
+      "item": [
+        {
+          "name": "Get Strategy Recommendations",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"performance_data\": {\n    \"avg_engagement\": 0.78,\n    \"best_performing_platform\": \"instagram\",\n    \"growth_rate\": 0.15\n  },\n  \"target_goals\": {\n    \"engagement_rate\": 0.90,\n    \"follower_growth\": 0.20\n  },\n  \"time_period\": \"week\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/recommend-strategy",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "recommend-strategy"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Security Agent",
+      "item": [
+        {
+          "name": "Validate Content",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Check out this amazing product! Contact us for more details.\",\n  \"platform\": \"instagram\",\n  \"language\": \"en\",\n  \"strict_mode\": false\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/validate-content",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "validate-content"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sentiment Agent",
+      "item": [
+        {
+          "name": "Analyze Sentiment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"I am feeling really happy and grateful today! This is wonderful.\",\n  \"language\": \"en\",\n  \"adjustment_level\": 0.5\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/tune-sentiment",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "tune-sentiment"]
+            }
+          }
+        },
+        {
+          "name": "Adjust Sentiment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"This is okay, I guess. Nothing special.\",\n  \"target_sentiment\": \"positive\",\n  \"language\": \"en\",\n  \"adjustment_level\": 0.8\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agents/tune-sentiment",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "agents", "tune-sentiment"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

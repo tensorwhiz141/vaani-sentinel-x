@@ -9,8 +9,8 @@ import time
 import asyncio
 from datetime import datetime, timedelta
 
-from ..models.request_models import StrategyRequest
-from ..models.response_models import StrategyResponse, StrategyRecommendation
+from models.request_models import StrategyRequest
+from models.response_models import StrategyResponse, StrategyRecommendation
 
 router = APIRouter()
 logger = logging.getLogger(__name__)

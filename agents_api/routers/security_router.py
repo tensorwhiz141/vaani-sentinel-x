@@ -9,8 +9,8 @@ import time
 import asyncio
 import re
 
-from ..models.request_models import SecurityValidationRequest, PlatformType, LanguageCode
-from ..models.response_models import SecurityValidationResponse, SecurityIssue
+from models.request_models import SecurityValidationRequest, PlatformType, LanguageCode
+from models.response_models import SecurityValidationResponse, SecurityIssue
 
 router = APIRouter()
 logger = logging.getLogger(__name__)

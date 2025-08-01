@@ -9,8 +9,8 @@ import time
 import asyncio
 from datetime import datetime
 
-from ..models.request_models import ContentAnalysisRequest, PerformancePredictionRequest, PlatformType, LanguageCode
-from ..models.response_models import AnalyticsResponse, ContentMetrics
+from models.request_models import ContentAnalysisRequest, PerformancePredictionRequest, PlatformType, LanguageCode
+from models.response_models import AnalyticsResponse, ContentMetrics
 
 router = APIRouter()
 logger = logging.getLogger(__name__)

@@ -10,8 +10,8 @@ import asyncio
 from datetime import datetime, timedelta
 import pytz
 
-from ..models.request_models import SchedulingRequest, PlatformType, LanguageCode
-from ..models.response_models import SchedulingResponse, SchedulingResult
+from models.request_models import SchedulingRequest, PlatformType, LanguageCode
+from models.response_models import SchedulingResponse, SchedulingResult
 
 router = APIRouter()
 logger = logging.getLogger(__name__)

@@ -9,8 +9,8 @@ import time
 import asyncio
 from datetime import datetime
 
-from ..models.request_models import TTSRequest, BatchTTSRequest, LanguageCode, VoiceType, ToneType
-from ..models.response_models import TTSResponse, TTSResult, BatchTTSResponse
+from models.request_models import TTSRequest, BatchTTSRequest, LanguageCode, VoiceType, ToneType
+from models.response_models import TTSResponse, TTSResult, BatchTTSResponse
 
 router = APIRouter()
 logger = logging.getLogger(__name__)

@@ -130,7 +130,7 @@ class ContentAnalysisRequest(BaseModel):
     platform: PlatformType = Field(..., description="Target platform")
     language: LanguageCode = Field(..., description="Content language")
     metadata: Optional[Dict[str, Any]] = Field(None, description="Additional metadata")
-    analysis_depth: Optional[str] = Field("standard", regex="^(basic|standard|detailed)$", description="Analysis depth")
+    analysis_depth: Optional[str] = Field("standard", pattern="^(basic|standard|detailed)$", description="Analysis depth")
 
 class PerformancePredictionRequest(BaseModel):
     content: str = Field(..., description="Content for performance prediction")
@@ -161,7 +161,7 @@ class StrategyRequest(BaseModel):
     content_history: Optional[List[Dict[str, Any]]] = Field(None, description="Historical content data")
     performance_data: Optional[Dict[str, Any]] = Field(None, description="Performance metrics")
     target_goals: Optional[Dict[str, float]] = Field(None, description="Target performance goals")
-    time_period: Optional[str] = Field("week", regex="^(day|week|month)$", description="Analysis time period")
+    # time_period: Optional[str] = Field("week", pattern="^(day|week|month)$", description="Analysis time period")
 
 # Security Validation Request Models
 class SecurityValidationRequest(BaseModel):
